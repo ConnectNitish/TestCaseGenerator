@@ -10,18 +10,18 @@ class Writer:
         self.output_file.write('\n')
 
     def write(self, data):
-        apply_seperator = True 
+        seperator = True 
         if type(data) is str:
             self.output_file.write(data)
         elif type(data) is int:
             self.output_file.write(str(data))
         elif type(data) is list:
             # self.output_file.write(' '.join(map(str, data)))
-            apply_seperator = False
+            seperator = False
             for i in data:
                 self.write(i)
         
-        if apply_seperator is True:
+        if seperator is True:
             self.output_file.write(' ')
         
     
